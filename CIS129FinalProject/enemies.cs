@@ -2,11 +2,16 @@
 
 
 public class Enemy {
-    string _name, _attack;
-    int _hp, _damage;
+    
+    readonly bool enemy = true;
     public Enemy(string name, int hp, string attack, int damage) {
-        _name = name; _attack = attack;
-        _hp = hp; _damage = damage;
+        const string _name = name; 
+        const string _attack = attack;
+        const int _hp = hp; const int _damage = damage;
+    }
+
+    public void attacked(int damage) {
+        General.sustainDamage(_hp, damage);
     }
 
     public void attack() {
