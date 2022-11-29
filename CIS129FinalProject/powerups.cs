@@ -9,7 +9,7 @@ public class Powerups {
             _hp=10;
             _description = "restores 10 health.";
         }
-        elif (_name == "Magicka Potion") {
+        else if (_name == "Magicka Potion") {
             _mp=20;
             _description = "restores 20 magicka.";
         }

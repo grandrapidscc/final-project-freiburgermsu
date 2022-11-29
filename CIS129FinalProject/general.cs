@@ -11,7 +11,7 @@ public static class General {
         Random randNum = new Random();
         for (int i = 0; i < 2; i++) position[i] = randNum.Next(0, 5);
     }
-    public static void sustainDamage(int hp, int damage, bool wizert=false) {
+    public static void sustainDamage(var obj, int damage, bool wizert=false) {
         hp -= damage;
         if (hp <= 0) {
             if (wizert) {
@@ -24,6 +24,7 @@ public static class General {
                 Console.WriteLine("Thank you for playing the Wizert :)")
             }
             Console.WriteLine("The enemy has perished.");
+
         }
         string entity = "enemy";
         if (wizert) entity="Wizert";

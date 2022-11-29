@@ -77,7 +77,16 @@ public class Wizert {
     }
 
     private void attacked(int damage) {
-        General.sustainDamage(_hp, damage, true);
+        hp -= damage;
+        if (hp <= 0) {
+            Console.WriteLine(@"The Wizert has perished. The game is over. 
+            Do you want to play another game?
+            1: Yes
+            2: No");
+            int response = Convert.ToInt32(Console.ReadLine());
+            if (response==1) Play();
+            Console.WriteLine("Thank you for playing the Wizert :)");
+        }
     }
     private void consume(int dMP, int dHP) {
         _mp += dMP; _hp += dHP;
