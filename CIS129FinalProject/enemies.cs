@@ -28,7 +28,6 @@ public class Enemy {
             Console.WriteLine("The enemy has perished.");
             // clear the respective Dungeon position. This may require that a Dungeon class is constructed 
             // and each entity is linked within a DungeonCell object which permits its use of the clear function
-            _position
         }
     }
 

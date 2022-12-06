@@ -1,4 +1,4 @@
-readonly int[] _position = General.position();
+int[] _position = General.position();
 
 // populate the Dungeon grid
 DungeonCell[,] Dungeon = new DungeonCell[5,5];

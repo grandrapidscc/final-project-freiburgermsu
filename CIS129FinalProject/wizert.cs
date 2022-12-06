@@ -3,7 +3,7 @@ using System;
 
 
 public class Wizert {
-    private int[] _position = General.position();
+    private int[] _position = new int[] {5,3};
     private int _mp = 200;
     private int _hp = 100;
 
@@ -62,16 +62,24 @@ public class Wizert {
         else {
             _position[positionIndex] += change;
         }
-        foreach (var obj in objects) {
-            if (_position.OrderBy(a => a).SequenceEqual(object._position.OrderBy(async => a))) {
-                if (object._enemy) enemyEncounter(object._name);
-                else {
-                    consume(obj._mp, obj._hp);
-                    Console.WriteLine($@"The Wizert encountered an {obj._name} powerup,
-                    which {obj._description}. The Wizert now has {_mp} MP and {_hp} HP.");
-                }
-            }
+        DungeonCell cell = Dungeon(_position);
+        if (cell._enemy) enemyEncounter(cell._enemy._name);
+        else if (cell._powerup) {
+            Powerups pwup = cell._powerup;
+            consume(pwup._mp, pwup._hp);
+            Console.WriteLine($@"The Wizert encountered an {pwup._name} powerup,
+            which {pwup._description}. The Wizert now has {_mp} MP and {_hp} HP.");
         }
+        // foreach (var obj in objects) {
+        //     if (_position.OrderBy(a => a).SequenceEqual(obj._position.OrderBy(async => a))) {
+        //         if (obj._enemy) enemyEncounter(obj._name);
+        //         else {
+        //             consume(obj._mp, obj._hp);
+        //             Console.WriteLine($@"The Wizert encountered an {obj._name} powerup,
+        //             which {obj._description}. The Wizert now has {_mp} MP and {_hp} HP.");
+        //         }
+        //     }
+        // }
         // encounter should be called when The Wizert's location is coincident with another object.
         //   This may be necessary to track in the outer object of the Play class.
     }

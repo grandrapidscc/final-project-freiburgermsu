@@ -2,7 +2,8 @@
 
 public class Death : Exception
 {
-    public InvalidDepartmentException(string message) : base(message) { }
+    public WizertDeath(string message) : base(message) { }
+    public EnemyDeath(string message) : base(message) { }
 }
 
 public static class General {
@@ -21,7 +22,7 @@ public static class General {
                 2: No");
                 int response = Convert.ToInt32(Console.ReadLine());
                 if (response==1) Play();
-                Console.WriteLine("Thank you for playing the Wizert :)")
+                Console.WriteLine("Thank you for playing the Wizert :)");
             }
             Console.WriteLine("The enemy has perished.");
 
